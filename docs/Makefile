@@ -1,0 +1,2 @@
+run:
+	docsify serve .././docs
