@@ -81,3 +81,19 @@ dotnet new list
 Now you can open `Visual Studio` and see new templates was added
 
 ![](/assets/img/vs_project_templates.png)
+
+### Add Framas Nuget Package Source
+
+`Framas Nuget Package Source` is the self hosted nuget server for internal use. This server contains all packages was built by Framas dev.
+
+You can add `Framas Nuget Package Source` into `Visual Studio` by following below steps:
+
+1. Open Visual Studio
+2. Go to Tools -> NuGet Package Manager -> Package Manager Settings -> Package Sources
+3. Click `+` button -> Enter `Name` and `Source` -> OK
+
+> You can get `Source` after host `Framas Nuget Package Source`
+> You can contact congdat.nguyen@framas.com to get `Framas Nuget Package Source`
+
+![](/assets/gif/vs_add_nugetpackagesource)
+
