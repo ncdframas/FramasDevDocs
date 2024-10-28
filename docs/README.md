@@ -92,8 +92,9 @@ You can add `Framas Nuget Package Source` into `Visual Studio` by following belo
 2. Go to Tools -> NuGet Package Manager -> Package Manager Settings -> Package Sources
 3. Click `+` button -> Enter `Name` and `Source` -> OK
 
-> You can get `Source` after host `Framas Nuget Package Source`
-> You can contact congdat.nguyen@framas.com to get `Framas Nuget Package Source`
+> You can get `Source` after host `FramasNugetServer`. The `Source` will be like `http://192.168.1.100:5860/v3/index.json`
+> 
+> You can contact congdat.nguyen@framas.com to get `FramasNugetServer`
 
 ![](/assets/gif/vs_add_nugetpackagesource.gif)
 
