@@ -896,6 +896,110 @@ var dataString = await file.ReadAsStringAsync();
 >       ![ex_virtual_file_system](assets/img/virtual_file_system_ex.png) </br>
 > File path of the `test.js` = `/FAM.Infrastructure/MyResources/test.js`
 
+
+### BLOB Storing
+
+It is typical to store file contents in an application and read these file contents on need. Not only files, but you may also need to save various types of large binary objects, a.k.a. BLOBs, into a storage. For example, you may want to save user profile pictures.
+
+
+A BLOB is a typically byte array. There are various places to store a BLOB item; storing in the local file system, in a shared database or on the Database BLOB storage can be options.
+
+#### BLOB Storage Providers
+
+* FileSystem: Stores BLOBs in a folder of the local file system, as standard files.
+* Database: Stores BLOBs in a database.
+
+Multiple providers can be used together by the help of the container system, where each container can uses a different provider.
+
+> [!NOTE]
+> BLOB storing system have default IBlobContainer using `Database` provider using current tenant database.
+
+#### How to Install
+
+Add below packages into the project
+
+```
+<PackageReference Include="Framas.BlobStoring" Version="8.0.0" />
+```
+
+#### IBlobContainer
+
+`IBlobContainer` is the main interface to store and read BLOBs. Your application may have multiple containers and each container can be separately configured. But, there is a default container that can be simply used by injecting the `IBlobContainer`.
+
+**Example**
+
+```cs
+namespace Demo
+{
+    public class MyService
+    {
+        private readonly IBlobContainer _blobContainer;
+
+        public MyService(IBlobContainer blobContainer)
+        {
+            _blobContainer = blobContainer;
+        }
+
+        public async Task SaveBytesAsync(byte[] bytes)
+        {
+            await _blobContainer.SaveAsync("my-blob-1", bytes);
+        }
+        
+        public async Task<byte[]> GetBytesAsync()
+        {
+            return await _blobContainer.GetBytesAsync("my-blob-1");
+        }
+    }
+}
+```
+
+#### IBlobContainerFactory
+
+`IBlobContainerFactory` is the service that is used to create the BLOB containers. One example was shown above.
+
+```cs
+var blobContainer = blobContainerFactory.Create("my-blob-container-name");
+
+// or using IServiceProvider directly
+var blobContainer2 = ServiceProvider.GetBlobContainer("my-blob-container-name-2");
+```
+
+#### Configuring the Containers
+
+Containers should be configured before using them. The most fundamental configuration is to select a BLOB storage provider
+
+```cs
+using Framas.BlobStoring.Abstractions;
+using Framas.BlobStoring.FileSystem;
+
+ public override Task ConfigureServicesAsync(ServiceConfigurationContext context)
+ {
+     context.Services.AddFramasBlobStoring(opt =>
+     {
+        // Configure IBlobContainer with name 'Physical' using FileSystem provider
+        opt.Containers.Configure("Physical", container => container.UseFileSystem((sp, provider) =>
+        {
+            provider.BasePath = "./physical";
+
+            // provider.UseDomainAccount = true;
+            // provider.DomainName = "";
+            // provider.DomainUsername = "";
+            // provider.DomainPassword = "";
+        }));
+
+        // Configure IBlobContainer with name 'Physical' using Database provider
+        opt.Containers.Configure("Database", container => container.UseDatabase((sp, provider) =>
+        {
+            provider.ConnectionString = "YOUR_CONNECTION_STRING";
+            provider.DbProvider = SystemDbProviders.SqlServer;
+        }));
+     });
+
+     return base.ConfigureServicesAsync(context);
+ }
+```
+
+
 ## Winforms
 
 ### Security

@@ -66,8 +66,6 @@ In Framas each company or data is identify by `mesocomp`. So in software we will
         Rel(system_db_1, plugin_1, "Use", "SqlConnection")
         Rel(system_db_1, lib_2, "Use", "SqlConnection")
         Rel(system_db_1, plugin_2, "Use", "SqlConnection")
-
-
       }
 ```
 
@@ -81,5 +79,3 @@ In Framas each company or data is identify by `mesocomp`. So in software we will
 ## Multi-Tenancy
 
 ## Modularity
-
-### 
