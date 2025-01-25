@@ -71,7 +71,7 @@ Add below packages into the project
 public void Test()
 {
     // Get ICurrentApp interface from DI container.
-    ICurrentApp currentApp = FramasWinformsApp.GetRequiredService<ICurrentApp>();
+    ICurrentApp currentApp = F.CurrentApp;
         
     var id = currentApp.Info.Id;
     var name = currentApp.Info.Name;
@@ -201,7 +201,7 @@ Add below packages into the project
 public void Test()
 {
     // Get ICurrentTenant interface from DI container.
-    ICurrentTenant currentTenant = FramasWinformsApp.GetRequiredService<ICurrentTenant>();
+    ICurrentTenant currentTenant = F.CurrentTenant;
 
     var mesocomp = currentTenant.MESOCOMP;
     var systemConnectionInfo = currentTenant.GetSystemConnectionInfo();
@@ -394,13 +394,13 @@ Add below packages into the project
 public void Test()
 {
     // Get ICurrentUser interface from DI container.
-    ICurrentUser currentUser = FramasWinformsApp.GetRequiredService<ICurrentUser>();
+    ICurrentUser currentUser = F.CurrentUser;
 
     // Get current user information.
     var username = currentUser.UserName;
 
     // Get ICurrentPrincipalAccessor interface from DI container.
-    var currentPrincipalAccessor = FramasWinformsApp.GetRequiredService<ICurrentPrincipalAccessor>();
+    var currentPrincipalAccessor = F.GetRequiredService<ICurrentPrincipalAccessor>();
     var claimPrincipals = currentPrincipalAccessor.Principal;
 
     // Loop through all claims.
@@ -492,7 +492,7 @@ public class ExampleController1 : ControllerBase
         _dbConnContainer = dbConnContainer;
 
         // Or you can get by IServiceProvider
-        _dbConnContainer = services.GetRequiredService<IDbConnectionContainer>();
+        _dbConnContainer = services.DbConnectionContainer;
     }
 
     [HttpGet]
@@ -520,7 +520,7 @@ using System.Data.Common;
 public void Execute()
 {
     // Get the IDbConnectionContainer service
-    var dbConnContainer = FramasWinformsApp.GetRequiredService<IDbConnectionContainer>();
+    var dbConnContainer = F.DbConnectionContainer;
 
     // Create the DbConnection object by the connection name 'Connection1'
     DbConnection conn = dbConnContainer.CreateDbConnection("Connection1");
@@ -1000,12 +1000,8 @@ using Framas.BlobStoring.FileSystem;
 ```
 
 
-## Winforms
+--- 
 
-### Security
+# AspNetCore
 
----
-
-## AspNetCore
-
-### WORK IN PROGESS
+## WORK IN PROGESS
