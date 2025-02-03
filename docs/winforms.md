@@ -8,7 +8,7 @@
 > To create a new `WinForms` project, you can use the Framas project templates available in `Framas.Templates`.
 > Make sure you have already installed the `Framas.Templates`. If not, please see the instructions in [Getting Started > Install Framas.Templates](/README?id=install-framastemplates).
 
-**Follow the steps below to create a new WinForms project**
+**Follow the below steps to create a new WinForms project**
 
 ![](/assets/gif/new_winform_project.gif)
 
@@ -369,7 +369,7 @@ public class MySettings
     public List<bool> ListBools { get; set; } = [];
 }
 
-// For class value add TypeConverter to allow edit when edit the config
+// For class value, add TypeConverter to allow editing when editing the config
 [TypeConverter(typeof(ExpandableObjectConverter))]
 public class ObjectData
 {
@@ -380,30 +380,30 @@ public class ObjectData
 
 #### FramasConfigAttribute
 
-FramasConfig have several properties below:
-- `ConfigContext`: (required): The `ConfigContext` of the config
-- `IsEncrypt`: (optional) (Default: false): Indicate the config data will be encrypted 
-- `Key`: (optional) (Default: If not provide the key will be the class full name): The key to identify the config
-- `Description`: (optional) (Default: ""): The description about the config
+FramasConfig has several properties:
+- `ConfigContext` (required): The `ConfigContext` of the config.
+- `IsEncrypt` (optional) (Default: false): Indicates whether the config data will be encrypted.
+- `Key` (optional) (Default: If not provided, the key will be the class full name): The key to identify the config.
+- `Description` (optional) (Default: ""): The description of the config.
 
 #### Get the config value
 
-To get the config value we use:
+To get the config value, use:
 
 ```cs
-// get config by GetConfig<T> generic method
+// Get config by GetConfig<T> generic method
 MySettings mySettings = F.GetConfig<MySettings>();
 
-// get config by type
+// Get config by type
 object? configObj = F.GetConfig(typeof(MySettings));
 
-// cast config object to target type
-MySettings settings = (MySettings)configOjb!;
+// Cast config object to target type
+MySettings settings = (MySettings)configObj!;
 ```
 
-#### Edit config use edit form
+#### Edit config using edit form
 
-To edit the config value we use ShowEditConfigForm this will show the dialog to update config
+To edit the config value, use ShowEditConfigForm. This will show the dialog to update the config.
 
 ```cs
 F.ShowEditConfigForm<MySettings>();

@@ -2,4 +2,5 @@
 * [Architecture](/architecture.md)
 * [Built In Libraries](/libraries.md)
 * [Winforms](/winforms.md)
+* [OMS](/oms.md)
 * [Change Logs](change_logs.md)
