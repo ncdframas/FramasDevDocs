@@ -14,6 +14,12 @@
 dotnet tool install --global framascli
 ```
 
+> **If you already installed then run update cmd to get latest version**
+
+```terminal
+dotnet tool update framascli
+```
+
 You can visit https://www.nuget.org/packages/framascli to check it out.
 
 ### Configure framascli
@@ -42,6 +48,10 @@ framascli manage_upload_target
 ### Install FramasVSIX
 
 `FramasVSIX` is the Visual Studio Extensions that provide some utility tools to work with Framas application project.
+
+> If you already installed FramasVSIX follow below steps to update to latest version
+
+![](/assets/img/update_framasvsix.png)
 
 You can go to this link https://marketplace.visualstudio.com/items?itemName=FramasVSIX.FramasVSIX to download and install it.
 
@@ -92,7 +102,7 @@ You can add `Framas Nuget Package Source` into `Visual Studio` by following belo
 2. Go to Tools -> NuGet Package Manager -> Package Manager Settings -> Package Sources
 3. Click `+` button -> Enter `Name` and `Source` -> OK
 
-> You can get `Source` after host `FramasNugetServer`. The `Source` will be like `http://192.168.1.100:5860/v3/index.json`
+> You can get `Source` after host `FramasNugetServer`. The `Source` will be like `http://10.40.10.4:5860/v3/index.json`
 > 
 > You can contact congdat.nguyen@framas.com to get `FramasNugetServer`
 
