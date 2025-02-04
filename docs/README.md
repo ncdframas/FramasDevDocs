@@ -17,7 +17,7 @@ dotnet tool install --global framascli
 > **If you already installed then run update cmd to get latest version**
 
 ```terminal
-dotnet tool update framascli
+dotnet tool update framascli --global
 ```
 
 You can visit https://www.nuget.org/packages/framascli to check it out.
@@ -69,6 +69,12 @@ After install `FramasVSIX`. Open the `Visual Studio` and follow below steps:
 
 ```terminal
 dotnet new install Framas.Templates
+```
+
+> If you already installed `Framas.Templates` then run below cmd to update latest version
+
+```terminal
+dotnet new update
 ```
 
 The templates should now available in
