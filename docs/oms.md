@@ -80,3 +80,35 @@ To add `OMS.Plugin.SharedModels` project. Please follow below steps
 
 
 3. Find the project `OMS.Plugin.SharedModels.csproj` that we just clone.
+
+
+### How to create new page in OMS
+
+1. Create new FramasPage
+
+![](/assets/img/create_usercontrol.png)
+
+![](/assets/img/change_usercontrol_to_framaspage.png)
+
+2. Show FramasPage
+
+```cs
+private void _aceOrders_Click(object? sender, EventArgs e)
+{
+    try
+    {
+        F.PageContainer.AddPage<Page2>();
+    }
+    catch (Exception ex)
+    {
+        FMsgBox.Error(ex);
+    }
+}
+```
+
+### How to authorize OMS menu, ribbon control
+
+
+
+
+

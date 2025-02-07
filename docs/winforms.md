@@ -427,6 +427,25 @@ F.UpdateConfig(settings);
 ```
 --- 
 
+## FMsgBox Class
+
+`FMsgBox` is the class that helps you show a message box easily. The message content is automatically localized; you don't need to localize it.
+
+**How to use it**
+```cs
+// Show the message box
+FMsgBox.Show("Welcome to OMS", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+// Show message box with yes/no buttons
+FMsgBox.YesNo("Do you want to continue?");
+
+// Show message box with ok button
+FMsgBox.Ok("That good");
+
+// Show message box with ok button and warning icon
+FMsgBox.Warning("Warning");
+```
+
 ## Components
 
 ### FramasLocalizer
