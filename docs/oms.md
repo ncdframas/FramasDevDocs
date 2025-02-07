@@ -28,11 +28,17 @@
 > The repo is private so if you need access to the repo please contact tuan.le@framas.com
 
 > [!WARNING]
-> For easily managing plugins, the branch name and the project plugin name should follow the format `OMS.Plugin.{ModuleName}.{PluginName}` 
+> For easily managing plugins, the branch name and the project plugin name should follow the format `OMS.Plugin.{ModuleName}.{PluginName}`. This branch is the branch main for the plugin
+>
+> Also add one more branch for develop like this `OMS.Plugin.{ModuleName}.{PluginName}_Dev`. We will develop on this branch
 
-> For example: `OMS.Plugin.Orders.OpenOrders`
+
+> For example: `OMS.Plugin.Orders.OpenOrders` - This is main branch for plugin
+>
+> For example: `OMS.Plugin.Orders.OpenOrders_Dev` - This is develop branch for plugin
 
 ![](/assets/gif/new_plugin_repo.gif)
+
 
 **The plugin project structure**
 
@@ -55,6 +61,22 @@ Open designer of `SideMenu.cs` and start to contribute menu elements
 
 ![](/assets/img/switch_oms_env.png)
 
+### Add OMS.Plugin.SharedModels to project
+
+The `OMS.Plugin.SharedModels` is the project that contains all the models, classes... that shared between plugins.
+
+To add `OMS.Plugin.SharedModels` project. Please follow below steps
+
+1. Clone repo https://github.com/framasVNIT/OMS_App_SharedModels
+
+> [!WARNING]
+> The `OMS.Plugin.SharedModels` repo should clone into the same parent folder of the OMS folder
+> 
+> ![](/assets/img/clone_oms_shared_models.png)
+
+2. In the OMS solution -> Right Click to solution -> Add Existing project
+
+![](/assets/img/add_existing_project.png)
 
 
-
+3. Find the project `OMS.Plugin.SharedModels.csproj` that we just clone.
