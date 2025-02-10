@@ -427,6 +427,68 @@ F.UpdateConfig(settings);
 ```
 --- 
 
+### Notifications
+
+The notifications functions was built in into winforms application. You can easily send a notification or handle a received notification.
+
+- To send a notification you can using the object `F.Notifier`
+
+```cs
+try
+{                                
+    // find the user by username
+    var user = await F.GetUserManager().FindByNameAsync("dummy@framas.com");
+
+    // get the list user id of the user who will receive the notification
+    var userReceivedIds = new List<string>() { user.Id };
+
+    // send the notification sync
+    F.Notifier.SendNotification(
+        userReceivedIds,
+        "Test Notification",                // The header
+        "This is a body 1",                 // The body
+        "TOPIC",                            // The topic of the notification
+        "PAYLOAD",                          // The payload of the notification
+        image: NotificationIcons.Empty);    // The icon of the notification
+
+    // send the notification async
+    // await F.Notifier.SendNotificationAsync(
+    //     userReceivedIds,
+    //     "Test Notification",                // The header
+    //     "This is a body 1",                 // The body
+    //     "TOPIC",                            // The topic of the notification
+    //     "PAYLOAD",                          // The payload of the notification
+    //     image: NotificationIcons.Empty);    // The icon of the notification        
+}
+catch (Exception ex)
+{
+    FMsgBox.Error(ex);
+}
+```
+
+- To handle a notification received event. Create a handler class as below
+
+```cs
+public class MyNotificationReceivedHandler : INotificationReceivedHandler, ITransientDependency
+{
+    public Task HandleAsync(NotificationHandleContext context)
+    {
+        return Task.CompletedTask;
+    }
+}
+```
+
+- To handle a notification actived event. Create a handler class as below
+```cs
+public class MyNotificationActivedHandler : INotificationActivedHandler, ITransientDependency
+{
+    public Task HandleAsync(NotificationHandleContext context)
+    {        
+        return Task.CompletedTask;
+    }
+}
+```
+
 ## FMsgBox Class
 
 `FMsgBox` is the class that helps you show a message box easily. The message content is automatically localized; you don't need to localize it.
