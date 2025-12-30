@@ -789,7 +789,7 @@ public enum ConfigContext
     /// <summary>
     /// Indicate the context will store for Global. Any one have the key can access this config
     /// </summary>
-    Global = 2
+    Global = 4
 }
 ```
 

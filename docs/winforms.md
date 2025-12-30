@@ -346,7 +346,6 @@ We have 4 ConfigContext:
 - `Global`: The config use for global context. The config with context Global will have only 1 config with specified key
 - `Company`: The config use for current selected company (tenant) environment. The config with context Company will have only 1 config per Company (tenant)
 - `User`: The config use for current logged in user. The config with context Company will have only 1 config per User
-- `Machine`: The config use for current machine. The config with context Machine will have only 1 config per Machine
 
 
 #### Define the config class
