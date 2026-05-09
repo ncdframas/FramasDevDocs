@@ -1,9 +1,9 @@
 ------------------------------
 ## DATABASE DOCUMENTATION UPDATE GUIDELINES
 ------------------------------
-## 1. Golden Rule
+## 1. Rule
 **"Code changes, Doc changes".**
-Any changes to the Database schema (Table, Column, Type, Index) without a corresponding documentation update will be considered Incomplete (Task Not Done).
+Any changes to the Database schema (Table, Column, Type, Index) have to documentation update.
 
 ------------------------------
 ## 2. Execution Checklist
@@ -17,7 +17,7 @@ Write descriptions directly into the database using Extended Properties in SQL S
 
 ![Update Description](assets/img/db_documentation/extend_properties.png)
 ![Update Description](assets/img/db_documentation/extend_properties_column.png)
-![Update Description](assets/img/db_documentation/description_properties_cloumn.png)
+![Update Description](assets/img/db_documentation/description_properties_column.png)
 
 (Figure 1: How to enter Column Description via Extended Properties)
 
@@ -26,6 +26,9 @@ Write descriptions directly into the database using Extended Properties in SQL S
 After finishing the updates on your local machine or staging environment:
 2.1. Generate Change Script:
 In the Table Designer window (Right-click table -> Design), after making changes, do not click Save immediately. Right-click any empty space or a column -> Select "Generate Change Script...".
+
+![Update Description](assets\img\db_documentation\generate_change_script.png)
+![Update Description](assets\img\db_documentation\save_change_script.png)
 
 (Figure 2: Selecting Generate Change Script in Table Designer)
 2.2. Sync Database:
@@ -53,7 +56,7 @@ Descriptions must be clear and focused on Business Logic rather than data types:
 ## 4. Responsibility & Review
 
 * Developer: Responsible for executing the task, writing descriptions, and ensuring DBDocs is up to date.
-* Team Leader / Reviewer:
+* Team Leader / Manager:
 * Reject the task/PR if the Database schema has changed but DOGE_WH_DEV and DBDocs are not updated.
    * Review the quality and clarity of the descriptions.
 
