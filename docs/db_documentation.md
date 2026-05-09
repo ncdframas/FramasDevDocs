@@ -16,7 +16,8 @@ Write descriptions directly into the database using Extended Properties in SQL S
 * In the Name column, enter MS_Description. In the Value column, enter the business logic description.
 
 ![Update Description](assets/img/db_documentation/extend_properties.png)
-
+![Update Description](assets/img/db_documentation/extend_properties_column.png)
+![Update Description](assets/img/db_documentation/description_properties_cloumn.png)
 
 (Figure 1: How to enter Column Description via Extended Properties)
 
