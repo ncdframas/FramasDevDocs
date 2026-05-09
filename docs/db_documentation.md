@@ -31,6 +31,7 @@ In the Table Designer window (Right-click table -> Design), after making changes
 ![Update Description](assets/img/db_documentation/save_change_script.png)
 
 (Figure 2: Selecting Generate Change Script in Table Designer)
+
 2.2. Sync Database:
 
 * Copy the generated script.
