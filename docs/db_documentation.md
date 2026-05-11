@@ -62,5 +62,5 @@ Descriptions must be clear and focused on Business Logic rather than data types:
    * Review the quality and clarity of the descriptions.
 
 ------------------------------
-💡 Project DBDocs Link: [dbdocs - framas](https://dbdocs.io/framas-vnm-system/Framas)
+💡 Project DBDocs Link:  [dbdocs - framas](https://dbdocs.io/framas-vnm-system/Framas)
 ------------------------------
