@@ -24,7 +24,8 @@ After finishing the updates on your local machine or staging environment:
 
 2.1. Generate Change Script:
 
-In the Table Designer window (Right-click table -> Design), after making changes, do not click Save immediately. Right-click any empty space or a column -> Select "Generate Change Script...".
+* In the Table Designer window (Right-click table -> Design), after making changes, do not click Save immediately.
+* Right-click any empty space or a column -> Select "Generate Change Script...".
 
 ![Update Description](assets/img/db_documentation/generate_change_script.png)
 ![Update Description](assets/img/db_documentation/save_change_script.png)
