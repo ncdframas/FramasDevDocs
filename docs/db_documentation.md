@@ -1,6 +1,3 @@
-------------------------------
-## DATABASE DOCUMENTATION UPDATE GUIDELINES
-------------------------------
 ## 1. Rule
 **"Code changes, Doc changes".**
 Any changes to the Database schema (Table, Column, Type, Index) have to documentation update.
