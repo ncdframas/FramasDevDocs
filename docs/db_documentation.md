@@ -1,6 +1,3 @@
-------------------------------
-## DATABASE DOCUMENTATION UPDATE GUIDELINES
-------------------------------
 ## 1. Rule
 **"Code changes, Doc changes".**
 Any changes to the Database schema (Table, Column, Type, Index) have to documentation update.
@@ -24,8 +21,11 @@ Write descriptions directly into the database using Extended Properties in SQL S
 ------------------------------
 ## Step 2: Sync Schema and Update DBDocs
 After finishing the updates on your local machine or staging environment:
+
 2.1. Generate Change Script:
-In the Table Designer window (Right-click table -> Design), after making changes, do not click Save immediately. Right-click any empty space or a column -> Select "Generate Change Script...".
+
+* In the Table Designer window (Right-click table -> Design), after making changes, do not click Save immediately.
+* Right-click any empty space or a column -> Select "Generate Change Script...".
 
 ![Update Description](assets/img/db_documentation/generate_change_script.png)
 ![Update Description](assets/img/db_documentation/save_change_script.png)
