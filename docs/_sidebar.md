@@ -3,5 +3,6 @@
 * [Built In Libraries](/libraries.md)
 * [Winforms](/winforms.md)
 * [OMS](/oms.md)
-* [Change Logs](change_logs.md)
+* [Framas Scanner](framas_scanner.md)
 * [Db documetation](db_documentation.md)
+* [Change Logs](change_logs.md)
